@@ -36,7 +36,7 @@
 
 ## Bean 등록 방법 ##
 1. Spring Bean Configuration File(XML)을 통해 등록하는 방법 (전통적인 방법)
-2. @Configuration Java File을 통해 등록하는 방법 (요즘 선호하는 방법)
+2. @Configuration Java File을 통해 등록하는 방법                          (요즘 선호하는 방법)
 3. 직접 컨트롤할 수 있는 클래스 같은 경우 어노테이션을 활용하여 component-scan을 활용하는 방법
 
 
@@ -56,7 +56,7 @@
          ㄴ AbstractContext
               ㄴ GenericApplicationContext
                    ㄴ GenericXmlApplicationContext
-                        ㄴ AnnotationApplicationContext
+                   ㄴ AnnotationApplicationContext
 
 -------------------------------------------------------------------------------------------------------
 
@@ -128,3 +128,22 @@
 1. base package로 설정된 하위 경로의 클래스들을 스캔(빈 스캐닝)하면서
    특정 어노테이션을 가지고 있는 클래스들을 Bean으로 등록해주는 기능
 2. @Component와 특수 목적에 따라 세분화된 어노테이션들을 인식하여 Bean으로 등록됨
+
+
+-----------------------------------------------------------------------------------------------
+
+## 정리
+1. IoC
+    - 개발자가 아닌 프레임워크가 프로그램의 흐름을 전반적으로 제어함
+2. IoC Container
+    - 스프링 관리하는 객체(Bean)들이 담겨있는 공간
+    - 기본적으로 Bean을 등록하면 싱글톤이 적용 (scope = "singleton")
+    - 개발에 필요한 객체들을 Bean으로 등록해서 사용하면 됨 - 보통 Controller, Service, Repository
+3. Bean 등록 방법
+    - xml 방식 : Spring Bean Configuration File(xml)에서 <bean> 태그 이용하여 등록
+    - java 방식 : @Configuration Java 파일에서 @Bean이용해서 등록
+    - annotation 방식 : @Component 관련 어노테이션을 부여한 후 component-scan 에 의해 Bean 으로 등록
+            -> @Controller, @Service, @Repository 어노테이션을 제공하기 때문에 MVC 패선에서 사용하기 유용
+4. IoC Container에 등록된 Bean객체를 가져오기
+    - 빈 등록 구문이 쓰여져있는 파일(xml, java)을 로드하면서 IoC 컨테이너 생성 후 getBean으로 가져오기
+    - DI 관련 어노테이션(@Inject, @Resource, @Autowired)을 사용하는 방법
