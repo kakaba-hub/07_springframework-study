@@ -132,3 +132,16 @@
 ------------------------------------------------------------------------------------------
 
 ## 정리 ##
+1. IoC
+    → 개발자가 아닌 프레임워크가 프로그램의 흐름을 전반적으로 제어함 (객체 생성 및 생명주기 관리 등)
+2. IoC Container
+    → 스프링이 관리하는 객체(Bean)들이 담겨있는 공간
+    → 기본적으로 싱글톤이 적용되어있어 객체가 매번 생성되지 않고 한번 생성해둔걸 재사용할 수 있음
+    → 개발에 필요한 객체들을 Bean으로 등록해서 사용하면됨
+3. Bean 등록 방법
+    → xml 방식        : Spring Bean Configuration File(xml)에서 <bean> 태그 이용해서 등록
+    → java 방식       : @Configuration Java 파일에서 @Bean 이용해서 등록
+    → annotation 방식 : @Component 관련 어노테이션을 부여한 후 component-scan에 의해 Bean으로 등록
+4. IoC Container에 등록된 Bean객체를 가져오기
+    → 빈 등록 구문이 쓰여져있는 파일(xml, java)을 로드하면서 IoC 컨테이너 생성 후 getBean으로 가져오기
+    → DI 관련 어노테이션(@Inject, @Resource, @Autowired)을 사용하는 방법
