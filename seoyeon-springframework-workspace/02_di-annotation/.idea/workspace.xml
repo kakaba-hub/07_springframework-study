@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36bb671a-d2e5-4b0d-ac4d-19e3c8e870c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Spring-DI(의존성주입).txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/podoseee/di/controller/PhoneController1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/podoseee/di/dto/Phone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/podoseee/di/run/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01_ioc-container/src/Spring-IoC(제어역전)" beforeDir="false" afterPath="$PROJECT_DIR$/../01_ioc-container/src/Spring-IoC(제어역전)" afterDir="false" />
-    </list>
+    <list default="true" id="36bb671a-d2e5-4b0d-ac4d-19e3c8e870c0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +121,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1746595287966</updated>
-      <workItem from="1746595288799" duration="5356000" />
+      <workItem from="1746595288799" duration="5770000" />
     </task>
     <servers />
   </component>
