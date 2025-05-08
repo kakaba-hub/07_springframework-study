@@ -25,9 +25,13 @@ tasks.withType(JavaCompile) {
 dependencies {
     // spring 라이브러리
     implementation 'org.springframework:spring-context:6.1.6'
+    implementation 'org.springframework:spring-webmvc:6.1.6'
 
     // servlet 라이브러리
     compileOnly('jakarta.servlet:jakarta.servlet-api:6.0.0')
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
+
 
     // 기타 라이브러리
     compileOnly 'org.projectlombok:lombok:1.18.24'
