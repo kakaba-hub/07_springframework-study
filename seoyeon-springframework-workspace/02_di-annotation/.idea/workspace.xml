@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36bb671a-d2e5-4b0d-ac4d-19e3c8e870c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/podoseee/di/controller/PhoneController2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/podoseee/di/service/PhoneService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/podoseee/di/service/PhoneServiceImpl_Mobile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/podoseee/di/service/PhoneServiceImpl_Web.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../03_webmvc/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../03_webmvc/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/podoseee/di/run/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/podoseee/di/run/Application.java" afterDir="false" />
-    </list>
+    <list default="true" id="36bb671a-d2e5-4b0d-ac4d-19e3c8e870c0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,6 +132,7 @@
       <workItem from="1746595288799" duration="5770000" />
       <workItem from="1746664025238" duration="1030000" />
       <workItem from="1746665338882" duration="1880000" />
+      <workItem from="1746668097033" duration="116000" />
     </task>
     <servers />
   </component>
