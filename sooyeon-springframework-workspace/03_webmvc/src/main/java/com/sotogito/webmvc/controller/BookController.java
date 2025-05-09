@@ -46,5 +46,16 @@ public class BookController {
     }
 
 
+        /*
+    1. 도서목록페이지(book/list.jsp) 에서 "도서등록페이지로이동" 버튼 추가
+
+
+
+    2. 해당 버튼 클릭시 "/book/registForm.do" url 요청되도록 설정
+        => 도서등록페이지(/WEB-INF/views/book/regist.jsp) 만들어서 띄우기 (폼요소작업)
+    3. 도서 등록 페이지에서 "등록" submit 하는 순간
+            "/book/regist.do" url 요청되도록 설정
+                    => 도서목록페이지가 다시 보여지도록 작업
+ */
 
 }

@@ -18,5 +18,45 @@
   <!--/book/list.do -> get 요청 -> 목록페이지(~/book/list.jsp) ======> 포워딩-->
   <a href="${contextPath}/book/list.do">도서 목록 페이지로 이동</a>
 
+
+  <h3>3. 요청파라미터(request param) 처리 연습</h3>
+  <a href="${contextPath}/member/detail.do?no=1">1번회원상세조회</a>
+
+  <br><br>
+  HttpServletRequest
+  <form action="${contextPath}/member/regist1.do" method="POST">
+    이름 : <input type="text" name="name"><br>
+    나이 : <input type="number" name="age"><br>
+    주소 : <input type="text" name="address">
+    <button type="submit">등록</button>
+  </form>
+
+  <br><br>
+  RequestParam
+  <form action="${contextPath}/member/regist2.do" method="POST">
+    이름 : <input type="text" name="name"><br>
+    나이 : <input type="number" name="age"><br>
+    주소 : <input type="text" name="address">
+    <button type="submit">등록</button>
+  </form>
+
+  <br><br>
+  RequestParam
+  <form action="${contextPath}/member/regist3.do" method="POST">
+    이름 : <input type="text" name="name"><br>
+    나이 : <input type="number" name="age"><br>
+    주소 : <input type="text" name="address">
+    <button type="submit">등록</button>
+  </form>
+
+  <hr>
+
+  <h3>4. 포워딩 또는 redirect시 필요한 데이터 담는 방법</h3>
+  <a href="${contextPath}/notice/list.page">공지사항 목록페이지로 이동을 할까요 말까요? 알아맞춰 보세요 ^^!</a>
+
+
+
+
+
 </body>
 </html>
