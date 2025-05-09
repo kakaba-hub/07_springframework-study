@@ -15,5 +15,32 @@
 
 <h3>2. response page forwarding / redirect </h3>
 <a href="${contextPath}/book/list.do">move to book list page</a>
+<hr>
+
+<h3> 3. request param</h3>
+<a href="${contextPath}/member/detail.do?no=1">member detail</a><br><br>
+<form action="${contextPath}/member/regist1.do" method="POST">
+  name: <input type="text" name="name"> <br>
+  age: <input type="text" name="age"> <br>
+  addr: <input type="text" name="addr"> <br>
+  <input type="submit" value="submit">
+</form>
+<br><br>
+<form action="${contextPath}/member/regist2.do" method="POST">
+  name: <input type="text" name="name"> <br>
+  age: <input type="text" name="age"> <br>
+  addr: <input type="text" name="addr"> <br>
+  <input type="submit" value="submit">
+</form>
+
+<form action="${contextPath}/member/regist3.do" method="POST">
+  name: <input type="text" name="name"> <br>
+  age: <input type="text" name="age"> <br>
+  addr: <input type="text" name="addr"> <br>
+  <input type="submit" value="submit">
+</form>
+<hr>
+<h3>4.forwarding / redirect 시 데이터 담는 방법 </h3>
+<a href="${contextPath}/notice/list.page">move to notice list page</a>
 </body>
 </html>
