@@ -9,8 +9,4 @@
     <typeAlias type="com.sotogito.sbatis.dto.MenuDto" alias="MenuDto"/>
   </typeAliases>
 
-  <mappers>
-
-  </mappers>
-
 </configuration>
