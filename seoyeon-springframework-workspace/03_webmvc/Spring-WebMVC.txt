@@ -86,7 +86,7 @@
             → 일반 변수           : 요청시 파라미터를 받는 변수
             → Model               : 응답페이지 포워딩시 필요한 데이터(attribute)를 담는 객체
             → ModelAndView        : Model(attribute) + View(뷰정보)를 같이 담는 객체
-            → RedirectAttribute   : redirect 할 때 필요한 데이터(flash attribute)를 담는 객체
+            → RedirectAttributes  : redirect 할 때 필요한 데이터(flash attribute)를 담는 객체
             → ...
 
 ## @GetMapping(""), @PostMapping("") ##
@@ -190,3 +190,4 @@
         redirect에 의해 포워딩되는 페이지에서 데이터를 사용하기 위해서는 Model에 담아서는 안됨
       → Controller 측 매개변수로 RedirectAttributes를 설정해두면 Spring이 알아서 객체를 주입해줌
       → 필요한 데이터를 addFlashAttribute 메소드로 담기
+

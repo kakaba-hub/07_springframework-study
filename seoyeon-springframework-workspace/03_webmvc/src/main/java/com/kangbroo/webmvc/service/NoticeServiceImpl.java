@@ -1,10 +1,12 @@
-package com.podoseee.webmvc.service;
+package com.kangbroo.webmvc.service;
 
-import com.podoseee.webmvc.dto.NoticeDto;
+import com.kangbroo.webmvc.dto.NoticeDto;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Service
 public class NoticeServiceImpl implements NoticeService {
 
     // db상에 존재하는 공지사항 목록이라는 가정
@@ -16,13 +18,7 @@ public class NoticeServiceImpl implements NoticeService {
 
     @Override
     public List<NoticeDto> getNoticeAll() {
-        NoticeDto notice = null;
-        for(NoticeDto n : dbList){
-            if(n.getNo() == no){
-                notice = n;
-            }
-        }
-        return notice;
+        return dbList;
     }
 
     @Override

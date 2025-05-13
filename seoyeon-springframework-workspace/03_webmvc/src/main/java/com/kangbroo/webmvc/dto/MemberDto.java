@@ -1,4 +1,4 @@
-package com.podoseee.webmvc.dto;
+package com.kangbroo.webmvc.dto;
 
 import lombok.*;
 

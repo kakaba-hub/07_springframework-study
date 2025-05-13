@@ -1,14 +1,16 @@
-package com.podoseee.webmvc.dto;
+package com.kangbroo.webmvc.dto;
 
 import lombok.*;
 
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @ToString
 public class NoticeDto {
+
     private int no;
     private String title;
     private String content;
+
 }

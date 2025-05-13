@@ -1,6 +1,6 @@
-package com.podoseee.webmvc.controller;
+package com.kangbroo.webmvc.controller;
 
-import com.podoseee.webmvc.dto.MemberDto;
+import com.kangbroo.webmvc.dto.MemberDto;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -43,13 +43,9 @@ public class MemberController {
 
     // 2. @RequestParam 사용 방법
     @PostMapping("/regist2.do")
-    public String memberRegist2(/*@RequestParam(value="name")*/ String name
+    public String memberRegist2(String name
                               , @RequestParam(value="age", defaultValue="10") int age
-                              , @RequestParam(value="address") String addr){
-//        log.debug("이름 : {}", name);
-//        log.debug("나이 : {}", age);
-//        log.debug("주소 : {}", addr);
-
+                              , @RequestParam("address") String addr){
         MemberDto mem = new MemberDto();
         mem.setName(name);
         mem.setAge(age);
@@ -62,8 +58,11 @@ public class MemberController {
 
     // 3. 커맨드 객체 방법
     @PostMapping("/regist3.do")
-    public String memberRegist3(MemberDto mem) {
+    public String memberRegist3(MemberDto mem){
         log.debug("mem : {}", mem);
         return "redirect:/";
     }
+
+
+
 }

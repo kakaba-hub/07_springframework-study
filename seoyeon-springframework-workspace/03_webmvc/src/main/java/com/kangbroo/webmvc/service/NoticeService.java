@@ -1,6 +1,6 @@
-package com.podoseee.webmvc.service;
+package com.kangbroo.webmvc.service;
 
-import com.podoseee.webmvc.dto.NoticeDto;
+import com.kangbroo.webmvc.dto.NoticeDto;
 
 import java.util.List;
 
