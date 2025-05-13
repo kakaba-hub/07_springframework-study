@@ -48,6 +48,8 @@ dependencies {
     // 기타 라이브러리
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
+
 
     // logging 라이브러리
     implementation 'ch.qos.logback:logback-classic:1.4.14'
