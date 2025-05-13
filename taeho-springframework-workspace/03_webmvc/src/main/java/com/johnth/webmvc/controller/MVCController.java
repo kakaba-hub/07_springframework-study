@@ -1,5 +1,7 @@
 package com.johnth.webmvc.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,9 +30,18 @@ public class MVCController extends HttpServlet {
 @Controller
 public class MVCController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    private Logger logger = LoggerFactory.getLogger(MVCController.class);
+
+    @RequestMapping(value = {"/", "/main.do"}, method = RequestMethod.GET)
     public String mainPage(){
         System.out.println("MVCController mainPage() 실행");
+
+        logger.trace("trace message - 디버깅보다는 상세한 정보");
+        logger.debug("debug message - 개발단계 디버깅용도");
+        logger.info("info message - 정보성 메시지");
+        logger.warn("warn message - 당장 문제는 없지만 추후 시스템 에러의 원인이 될 수 있는 경보성 메시지");
+        logger.error("error message - 요청 처리중 문제가 발생한 상태를 기록");
+
         return "main";
     }
 
