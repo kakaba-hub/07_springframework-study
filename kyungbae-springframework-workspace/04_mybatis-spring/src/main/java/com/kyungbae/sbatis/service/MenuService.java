@@ -21,4 +21,7 @@ public interface MenuService {
     // 메뉴일괄삭제서비스
     int menuRemover(String[] codes);
 
+    // 트랜잭션테스트용
+    int registTwoMenu();
+
 }
