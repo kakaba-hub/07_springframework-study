@@ -45,13 +45,13 @@ public class MenuController {
 
     @GetMapping("/detail.page") //    /menu/detail.page?code=xx
     public void menuDetailPage(int code, Model model){
-        model.addAttribute("menu", menuService.getMenuByCode(code));
+        model.addAttribute("menu", menuService.getMenuById(code));
         //return "menu/detail";
     }
 
     @GetMapping("/modify.page") //   /menu/modify.page?code=xx
     public void menuModifyPage(int code, Model model){
-        model.addAttribute("menu", menuService.getMenuByCode(code));
+        model.addAttribute("menu", menuService.getMenuById(code));
         //return "menu/modify";
     }
     @PostMapping("/modify.do")
@@ -83,6 +83,11 @@ public class MenuController {
         redirectAttributes.addFlashAttribute("message", message);
 
         return "redirect:/menu/list.page";
+    }
+
+    @GetMapping("/transaction.do")
+    public void transactionTest(){
+        menuService.registTwoMenu();
     }
 
 

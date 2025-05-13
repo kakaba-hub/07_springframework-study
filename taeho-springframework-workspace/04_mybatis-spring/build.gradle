@@ -28,6 +28,10 @@ dependencies {
     implementation 'org.springframework:spring-webmvc:6.1.6'
     // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
     implementation("org.springframework:spring-jdbc:6.1.6")
+    // https://mvnrepository.com/artifact/org.aspectj/aspectjrt
+    implementation("org.aspectj:aspectjrt:1.9.19")
+    // https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
+    implementation("org.aspectj:aspectjweaver:1.9.19")
 
     // servlet/jsp 라이브러리
     compileOnly('jakarta.servlet:jakarta.servlet-api:6.0.0')
