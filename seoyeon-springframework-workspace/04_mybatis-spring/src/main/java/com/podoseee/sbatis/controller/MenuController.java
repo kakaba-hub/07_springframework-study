@@ -63,7 +63,7 @@ public class MenuController {
         }
         redirectAttributes.addFlashAttribute("message", message);
 
-        return "redirect:menu/detail.page?code=" + menu.getMenuCode();
+        return "redirect:/menu/detail.page?code=" + menu.getMenuCode();
 
     }
 
@@ -77,7 +77,13 @@ public class MenuController {
         }else{
             message = "메뉴 삭제에 실패하였습니다.";
         }
+        redirectAttributes.addFlashAttribute("message", message);
 
         return "redirect:/menu/list.page";
+    }
+
+    @GetMapping("/transaction.do")
+    public void transactionTest(){
+        menuService.registTwoMenu();
     }
 }

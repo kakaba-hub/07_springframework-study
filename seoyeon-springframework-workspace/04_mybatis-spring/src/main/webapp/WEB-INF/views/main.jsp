@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<%@ taglib prefix="" uri="jakarta.tags.core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>메인페이지</h1>
-<a href="@{contextPath}/menu/list.page">메뉴 목록 페이지로 이동</a>
+<a href="${contextPath}/menu/list.page">메뉴 목록 페이지로 이동</a>
 <!--
   1) 목록 기능
   /menu/list.page   ==포워딩==>   메뉴목록페이지 - /WEB-INF/views/menu/list.jsp (메뉴목록데이터 필요)
