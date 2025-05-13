@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.awt.*;
 
 @RequiredArgsConstructor
 @RequestMapping("/menu")
@@ -37,7 +36,7 @@ public class MenuController {
 
         String message = "";
         if (insertResult > 0) {
-            message = menu.getMenuCode()+ "번 등록 성공";
+            message = menu.getMenuCode() + "번 등록 성공";
         } else {
             message = "실패";
         }
@@ -46,7 +45,8 @@ public class MenuController {
         return "redirect:/menu/list.page";
     }
 
-    @GetMapping("/detail.page") /// /menu/detail.page?menuCode=${menu.menuCode}
+    @GetMapping("/detail.page")
+    /// /menu/detail.page?menuCode=${menu.menuCode}
     public String menuDetailPage(@RequestParam int menuCode, Model model) {
         MenuDto menu = menuService.getMenuByMenuCode(menuCode);
         model.addAttribute("menu", menu);
@@ -54,7 +54,8 @@ public class MenuController {
         return "menu/detail";
     }
 
-    @GetMapping("/modify.page") /// /menu/modify.page?menuCode=${menu.menuCode}
+    @GetMapping("/modify.page")
+    /// /menu/modify.page?menuCode=${menu.menuCode}
     public String menuModifyPage(@RequestParam int menuCode, Model model) {
         MenuDto menu = menuService.getMenuByMenuCode(menuCode);
         model.addAttribute("menu", menu);
@@ -67,9 +68,9 @@ public class MenuController {
         int modifyResult = menuService.modifyMenu(menu);
 
         String message = "";
-        if(modifyResult > 0) {
+        if (modifyResult > 0) {
             message = "성공";
-        }else {
+        } else {
             message = "실패";
         }
         redirectAttributes.addFlashAttribute("message", message);
@@ -77,7 +78,8 @@ public class MenuController {
         return "redirect:/menu/detail.page?menuCode=" + menu.getMenuCode();
     }
 
-    @PostMapping("/remove.do") /// /menu/remove.do?code=X$code=x
+    @PostMapping("/remove.do")
+    /// /menu/remove.do?code=X$code=x
     public String removeMenu(@RequestParam String[] code, RedirectAttributes redirectAttributes) {
         int removeResult = 0;
         String message = "";
@@ -87,7 +89,7 @@ public class MenuController {
         } catch (DataIntegrityViolationException e) {
             message = e.getMessage();
         }
-        if(removeResult == code.length){
+        if (removeResult == code.length) {
             message = "성공";
         }
         redirectAttributes.addFlashAttribute("message", message);
@@ -96,4 +98,8 @@ public class MenuController {
     }
 
 
+    @GetMapping("/transaction.do")
+    public void transactionTest() {
+        menuService.registerTwoMenu();
+    }
 }

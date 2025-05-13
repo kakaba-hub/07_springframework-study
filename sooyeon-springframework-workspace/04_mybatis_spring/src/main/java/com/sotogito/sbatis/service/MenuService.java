@@ -15,4 +15,8 @@ public interface MenuService {
     int modifyMenu(MenuDto menuDto);
 
     int removeMenuByMenuCode(String[] menuCodes);
+
+    /// 트랜젝션테스트용
+    int registerTwoMenu();
+
 }
