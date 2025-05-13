@@ -6,8 +6,8 @@
     </encoder>
   </appender>
 
-  <logger name="org.springframework" level="INFO" />
-  <logger name="com.kyungbae.ajax" level="DEBUG" />
+  <logger name="org.springframework" level="INFO"/>
+  <logger name="com.kyungbae.ajax" level="DEBUG"/>
 
   <root level="WARN">
     <appender-ref ref="consoleLog"/>
