@@ -7,7 +7,7 @@
   </appender>
 
   <logger name="org.springframework" level="INFO" />
-  <logger name="프로젝트의 베이스 패키지" level="DEBUG" />
+  <logger name="프로젝트의 베이스 패키지" level="INFO" />
 
   <root level="WARN">
     <appender-ref ref="consoleLog"/>
