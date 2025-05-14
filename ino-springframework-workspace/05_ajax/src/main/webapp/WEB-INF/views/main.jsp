@@ -47,19 +47,18 @@
     const id = document.getElementById("input2_1").value;
     const pwd = document.getElementById("input2_2").value;
 
-    const user = { // JavaScript 객체 생성
-      id: id,
-      pwd: pwd
-    };
+    const formData = new URLSearchParams();
+    formData.append('id', id);
+    formData.append('pwd', pwd);
 
     fetch("${contextPath}/ajaxTest2.do", {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json' // 요청 Content-Type을 JSON으로 설정
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
-      body: JSON.stringify(user) // JavaScript 객체를 JSON 문자열로 변환하여 body에 담기
+      body: formData
     })
-      .then(response => response.text()) // 서버에서 텍스트 응답을 받기로 가정 (필요에 따라 response.json()으로 변경)
+      .then(response => response.text())
       .then(data => {
         console.log(data);
         document.getElementById('result2').textContent = data;
@@ -107,23 +106,97 @@
 <div id="result4">요청4의 결과가 보여지는 영역</div>
 
 <script>
+  document.getElementById('btn4').addEventListener('click', (evt) => {
 
+    const noInput = document.getElementById('input4');
+    fetch("${contextPath}/ajaxTest4.do?no=" + noInput.value)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        let r4 = `<ul>
+                  <li>\${data.id}</li>
+                  <li>\${data.name}</li>
+                  <li>\${data.pwd}</li>
+                  <li>\${data.age}</li>
+              </ul>`;
+        document.getElementById('result4').innerHTML = r4;
+      })
+  });
 </script>
 
 <hr>
 
+<%--<h3>5. Java 객체(List) 응답</h3>--%>
+<%--<button id="btn5">요청</button>--%>
+<%--<br>--%>
+<%--응답 :--%>
+<%--<table id="result5" border="1">--%>
+<%--  <tbody>--%>
+<%--  요청5의 결과가 보여지는 영역--%>
+<%--  </tbody>--%>
+<%--</table>--%>
+
+<%--<script>--%>
+<%--  document.getElementById('btn5').addEventListener('click', (evt) => {--%>
+<%--    fetch("${contextPath}/ajaxTest5.do")--%>
+<%--      .then(response => response.json())--%>
+<%--      .then(data => {--%>
+<%--        console.log(data);--%>
+<%--        var tbodyContent = ''; // tbody에 추가할 내용을 담을 변수--%>
+<%--        for (const x of data) {--%>
+<%--          console.log(x);--%>
+<%--          let tr = `--%>
+<%--          <tr>--%>
+<%--            <td>${x.id}</td>--%>
+<%--            <td>${x.pwd}</td>--%>
+<%--            <td>${x.name}</td>--%>
+<%--            <td>${x.age}</td>--%>
+<%--          </tr>--%>
+<%--        `;--%>
+<%--          tbodyContent += tr; // 각 데이터를 테이블 행으로 만들어 추가--%>
+<%--        }--%>
+<%--        const tbody = document.querySelector('#result5 tbody'); // id가 result5인 테이블의 tbody 선택--%>
+<%--        if (tbody) {--%>
+<%--          tbody.innerHTML = tbodyContent;--%>
+<%--        }--%>
+<%--        // document.querySelector('#result5').textContent = ''; // 이 줄은 제거--%>
+<%--      });--%>
+<%--  });--%>
+<%--</script>--%>
 <h3>5. Java 객체(List) 응답</h3>
 <button id="btn5">요청</button>
 <br>
 응답 :
 <table id="result5" border="1">
   <tbody>
-  요청5의 결과가 보여지는 영역
   </tbody>
 </table>
 
 <script>
-
+  document.getElementById('btn5').addEventListener('click', (evt) => {
+    fetch("${contextPath}/ajaxTest5.do")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        var tbodyContent = ''; // tbody에 추가할 내용을 담을 변수
+        for (const x of data) {
+          console.log(x);
+          let tr = `
+          <tr>
+            <td>\${x.id}</td>
+            <td>\${x.pwd}</td>
+            <td>\${x.name}</td>
+            <td>\${x.age}</td>
+          </tr>
+        `;
+          tbodyContent += tr; // 각 데이터를 테이블 행으로 만들어 추가
+        }
+        const tbody = document.querySelector('#result5 tbody'); // id가 result5인 테이블의 tbody 선택
+        if (tbody) {
+          tbody.innerHTML = tbodyContent;
+        }
+      });
+  });
 </script>
 
 
