@@ -100,7 +100,32 @@
   <div id="result4">요청4의 결과가 보여지는 영역</div>
 
   <script>
+    document.getElementById("btn4").addEventListener("click", (evt) => {
 
+      const noInput = document.getElementById("input4"); // input 요소 객체
+
+      fetch("${contextPath}/ajaxTest4.do?no=" + noInput.value)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          /*
+          let ul = "<ul>"
+            + "<li>아이디: " + data.id + "</li>"
+            + "<li>비밀번호: " + data.pw + "</li>"
+            + "<li>이름: " + data.name + "</li>"
+            + "<li>나이: " + data.age + "</li>"
+          + "</ul>";
+          */
+          let ul = `<ul>
+  <li>아이디: \${data.id}</li>
+  <li>비밀번호: \${data.pw}</li>
+  <li>이름: \${data.name}</li>
+  <li>나이: \${data.age}</li>
+</ul>`
+          document.getElementById("result4").innerHTML = ul;
+        })
+
+    })
   </script>
 
   <hr>
@@ -116,7 +141,27 @@
   </table>
 
   <script>
+    document.getElementById("btn5").addEventListener("click", (evt) => {
 
+      fetch("${contextPath}/ajaxTest5.do")
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+
+          let tr = '';
+          data.forEach(user => {
+            tr += `<tr>
+                    <td>\${user.id}</td>
+                    <td>\${user.pw}</td>
+                    <td>\${user.name}</td>
+                    <td>\${user.age}</td>
+                   </tr>`;
+          });
+
+          document.getElementById("result5").innerHTML = tr;
+        })
+
+    })
   </script>
 
 

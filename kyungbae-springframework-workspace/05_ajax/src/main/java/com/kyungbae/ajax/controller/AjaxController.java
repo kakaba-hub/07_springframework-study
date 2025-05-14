@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Slf4j
 @Controller
 public class AjaxController {
@@ -48,9 +50,30 @@ public class AjaxController {
 
     @ResponseBody
     @PostMapping(value = "/ajaxTest3.do", produces = "text/html; charset=utf-8")
-    public String ajaxTest3(@RequestBody UserDto user) {
+    public String ajaxTest3(@RequestBody UserDto user) { // DTO 대신 map 객체로 담을수도 있다
         log.debug("user: {}", user);
         String searchName= "김심심";
         return searchName;
+    }
+
+    @ResponseBody
+    @GetMapping(value = "ajaxTest4.do")
+    public UserDto ajaxTest4(int no){
+        log.debug("param no: {}", no);
+        UserDto searchedUser = new UserDto("id01", "pw01", "최팔팔", 30);
+        return searchedUser; // jsp로 전송할때 Java 객체 => JSON 문자열로 Jackson이 자동 parsing 해줌
+        // Java객체(DTO) => JSON문자열 '{"id":"id01", "pw":"pw01", "name":"최팔팔", "age":30}'
+    }
+
+    @ResponseBody
+    @GetMapping(value = "ajaxTest5.do")
+    public List<UserDto> ajaxTest5(){
+        List<UserDto> selectedUsers = List.of(
+                new UserDto("id01", "pw01", "가가가", 10),
+                new UserDto("id02", "pw02", "가가나", 20),
+                new UserDto("id03", "pw03", "가가다", 30),
+                new UserDto("id04", "pw04", "가가라", 40)
+        );
+        return selectedUsers;
     }
 }
