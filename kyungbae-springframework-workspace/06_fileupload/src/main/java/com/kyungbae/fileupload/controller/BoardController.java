@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/board")
@@ -26,6 +28,19 @@ public class BoardController {
         int result = boardService.registOneFileBoard(board, imageFile);
 
         if (result > 0) {
+            log.debug("게시글 등록 성공");
+        } else {
+            log.debug("게시글 등록 실패");
+        }
+
+        return "redirect:/";
+    }
+
+    @PostMapping(value = "/regist2.do")
+    public String registBoard2(BoardDto board, List<MultipartFile> imageFiles){
+        int result = boardService.registManyFileBoard(board, imageFiles);
+
+        if (result == imageFiles.size()+1) {
             log.debug("게시글 등록 성공");
         } else {
             log.debug("게시글 등록 실패");

@@ -49,6 +49,30 @@ public class BoardServiceImpl implements BoardService{
 
     @Override
     public int registManyFileBoard(BoardDto board, List<MultipartFile> imageFiles) {
-        return 0;
+
+        BoardMapper boardMapper = sqlSession.getMapper(BoardMapper.class);
+
+        int result = boardMapper.insertBoard(board);
+
+        if (result > 0 && imageFiles != null) {
+            for (MultipartFile imageFile : imageFiles) {
+                if (imageFile != null && !imageFile.getOriginalFilename().equals("")) {
+
+                    // 파일 업로드
+                    Map<String, String> map = fileUtil.fileupload(imageFile);
+
+                    // db에 정보기록
+                    AttachmentDto attach = AttachmentDto.builder()
+                            .filePath(map.get("filePath"))
+                            .originalName(map.get("originalFileName"))
+                            .filesystemName(map.get("filesystemName"))
+                            .boardNo(board.getBoardNo())
+                            .build();
+                    result += boardMapper.insertAttach(attach);
+                }
+            }
+        }
+
+        return result;
     }
 }
