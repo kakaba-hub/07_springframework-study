@@ -4,6 +4,11 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+  <settings>
+    <!-- 빈문자열일 경우 NULL로 삽입되게 하는 세팅 -->
+    <setting name="jdbcTypeForNull" value="VARCHAR"/>
+  </settings>
+
   <typeAliases>
     <typeAlias type="com.ssg.app.dto.UserDto" alias="UserDto"/>
     <typeAlias type="com.ssg.app.dto.AttachDto" alias="AttachDto"/>
