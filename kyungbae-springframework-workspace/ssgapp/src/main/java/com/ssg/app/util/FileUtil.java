@@ -33,7 +33,7 @@ public class FileUtil {
 
         Map<String, String> map = Map.of(
                 "filePath", filePath,
-                "originalFilename", originalFilename,
+                "originalFileName", originalFilename,
                 "filesystemName", filesystemName
         );
 
